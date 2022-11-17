@@ -15,9 +15,10 @@ function obtenerUbicaciones(req, res){
     .then(data =>{
 
         filtroData = data.map((linea) => linea.publicData())
-        res.send(filtroData)
+        res.staus(200).send(filtroData)
         
     } )
+    .catch(err => res.status(400).send("No fue posible recuperar las instalaciones"))
 }
 
 /*Update */
