@@ -10,15 +10,16 @@ function crearUbicacion(req, res){
 }
 
 /* read*/
-function obtenerUbicaciones(req, res){
+async function obtenerUbicaciones(req, res){
+   
     Ubicacion.find()
-    .then(data =>{
-
-        filtroData = data.map((linea) => linea.publicData())
-        res.staus(200).send(filtroData)
+    .then(async data =>{
+           
+        const filtroData = await data.map((linea) => linea.publicData())
+        res.status(200).send(filtroData)
         
     } )
-    .catch(err => res.status(400).send("No fue posible recuperar las instalaciones"))
+    .catch(err => res.status(400).send("no se pueden recuperar las "))
 }
 
 /*Update */

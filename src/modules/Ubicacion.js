@@ -19,7 +19,7 @@ const UbicacionSchema = mongoose.Schema({
 },{ timestamps: true})
 
 
-UbicacionSchema.plugin(UniqueValidator)
+
 UbicacionSchema.plugin(UniqueValidator,{message: "El nombre de la instalacion ya existe"})
 
 UbicacionSchema.methods.publicData = function(){
